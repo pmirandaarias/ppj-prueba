@@ -16,7 +16,7 @@ El e-commerce está desarrollado con:
 
 Es necesario tener `npm` o `yarn` (recomendado) instalados. Luego siga este paso a paso:
 
-1. `git clone https://github.com/pmirandaarias/ppj-ecommerce.git`
+1. `git clone https://github.com/pmirandaarias/ppj-prueba.git`
 2. `cd ppj-ecommerce`
 3. `yarn`
 4. `yarn start`
