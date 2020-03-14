@@ -3,25 +3,38 @@
 Este repo es para (no daré la descripción mejor) aplicar al puesto de XXX en YYY.
 
 Esá hecho en base a create-react-app, por lo que automáticamente se crea este readme con las instrucciones de instalación y uso de yarn o npm, pero que, de acuerdo a lo solicitado, se detallará en español y lo más preciso posible. El Readme por defecto lo dejaré al final.
-.g
+
 ### Features
 El e-commerce está desarrollado con:
 - React
 - React-router
 - Redux
 - React-redux
-- [AmiiboAPI](https://www.amiiboapi.com/).
+- React-bootstrap
+- [AmiiboAPI](https://www.amiiboapi.com/)
 
 ### Instrucciones de instalación
 
 Es necesario tener `npm` o `yarn` (recomendado) instalados. Luego siga este paso a paso:
 
 1. `git clone https://github.com/pmirandaarias/ppj-prueba.git`
-2. `cd ppj-ecommerce`
+2. `cd ppj-prueba`
 3. `yarn`
 4. `yarn start`
 
 Se abrirá una ventana en su navegador por defecto en `localhost:3000` donde visualizará el proyecto corriendo (en modo desarollo).
+
+
+### Consideraciones de desarrollo
+
+- Indentación de 2 espacios (tab) como es el trend actual en React (ya que se anidan muchos componentes, el árbol crece).
+- Comento las líneas que merecen más explicación para un futuro desarrollo o mantenimiento, no en exceso porque es prueba.
+- Preferí trabajar más en estilos propios a mano que usar plantillas/librerías o css externos tipo Semantic, Bulma, Materialize etc (además par dejar fuera jQuery, y hacer todo con React). Para mejor control de cada elemento además que es bien preciso y corto en funcionalidades. Traté de hacer todo from the scratch, pero basado en react-bootstrap (Bootstrap 4) para algunos componentes, botones, etc. Lo de tratar de hacer a mano los estilos, div, colores, etc, es para dar una idea también de mis conocimientos bajo presión.
+- Como fue pedido `react-router`, lo usé para dejar una vista separada del Cart.
+- Iba a hacer un combobox con la opción de elegir "type" para la llamada a la API de Amiibo, pero no estaba dentro de lo pedido (además se me ocurrió más tarde), para así ir cambiando el tipo de data al traer. Filtré por un tipo de data para tener un json de regular longitud y no fuesen tantos datos para probar en ese ecommerce de prueba.
+- Traté de dejar algunos componentes stateless y otros statefull donde se requería.
+- "Checkout" no hace nada, por un momento al leer las instrucciones pensé que la API recibiría peticiones POST para enviar datos pero leí que como era educacional, sólo aceptaba GET, así que no tiene mayor funcionalidad el Checkout.
+- No hice uso de styles inline, para dejar todo en clases.
 
 ***
 
