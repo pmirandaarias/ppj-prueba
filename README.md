@@ -1,3 +1,35 @@
+## E-commerce para PPJ.
+
+Este repo es para (no daré la descripción mejor) aplicar al puesto de XXX en YYY.
+
+Esá hecho en base a create-react-app, por lo que automáticamente se crea este readme con las instrucciones de instalación y uso de yarn o npm, pero que, de acuerdo a lo solicitado, se detallará en español y lo más preciso posible. El Readme por defecto lo dejaré al final.
+.g
+### Features
+El e-commerce está desarrollado con:
+- React
+- React-router
+- Redux
+- React-redux
+- [AmiiboAPI](https://www.amiiboapi.com/).
+
+### Instrucciones de instalación
+
+Es necesario tener `npm` o `yarn` (recomendado) instalados. Luego siga este paso a paso:
+
+1. `git clone https://github.com/pmirandaarias/ppj-ecommerce.git`
+2. `cd ppj-ecommerce`
+3. `yarn`
+4. `yarn start`
+
+Se abrirá una ventana en su navegador por defecto en `localhost:3000` donde visualizará el proyecto corriendo (en modo desarollo).
+
+***
+
+A continuación, ReadME original del `create-react-app`:
+
+***
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -11,7 +43,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
+Code Splitting
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
