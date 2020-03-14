@@ -7,7 +7,8 @@ import List from './components/List'
 import Cart from './components/Cart'
 import {API_URL} from "./utils/constants";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Spinner, Container, Row, Col } from 'react-bootstrap'
+import {Spinner, Container, Row, Col} from 'react-bootstrap'
+import NumberFormat from "react-number-format";
 
 class App extends Component {
 
@@ -15,7 +16,8 @@ class App extends Component {
     super();
 
     this.state = {
-      loading: true
+      loading: true,
+      showPanel: false
     }
   }
 
@@ -29,7 +31,6 @@ class App extends Component {
         if (res.ok) {
           res.json().then(data => {
             data = JSON.parse(JSON.stringify(data));
-            console.log('data.amiibo', data.amiibo)
             setItemsList(data.amiibo);
             this.setState({ loading: false})
           });
@@ -40,14 +41,69 @@ class App extends Component {
       );
   }
 
+
+  handleShowPanelCart = () => {
+    const {cartQuantity} = this.props;
+
+    if (cartQuantity>0) {
+      if (!this.state.showPanel) {
+        this.setState({ showPanel: true})
+      } else {
+        this.setState({ showPanel: false})
+      }
+    } else {
+      this.setState({ showPanel: false})
+    }
+  }
+
   render() {
-    const { cartQuantity } = this.props;
-    const { loading } = this.state;
+    const { cartQuantity, items } = this.props;
+    const { loading, showPanel } = this.state;
+
+    let addedItems = items.length ?
+      (
+        items.map(item => {
+          const idTail = item.tail;
+
+          // Simulación del precio, a partir de data que viene en cada item
+          const price =
+            item.release.au ? parseInt(item.release.au.split('-')[2])*1000 + 10990 :
+              item.release.eu ? parseInt(item.release.eu.split('-')[2])*1000 + 10990 :
+                item.release.jp ? parseInt(item.release.jp.split('-')[2])*1000 + 10990 :
+                  item.release.na ? parseInt(item.release.na.split('-')[2])*1000 + 10990 : 10990;
+          return (
+            <Row key={idTail} className="row-panel-cart">
+              <Col>
+                <img src={item.image} alt={item.name} className="img-item-panel"/>
+              </Col>
+              <Col>
+                <span className="title-cart-item-panel"><strong>Título</strong>: {item.name}</span>
+                <br/>
+                <span className="title-cart-item-panel"><strong>Valor</strong>: <NumberFormat value={price} displayType={'text'} thousandSeparator="." decimalSeparator="," prefix={'$'} /></span>
+                <br/>
+                <span className="title-cart-item-panel"><strong>Cantidad</strong>: {item.quantity}</span>
+              </Col>
+            </Row>
+          )
+        })
+      ) : (<></>);
+
 
     return (
       <BrowserRouter>
         <div className="App">
-          <NavbarBs cartQuantity={cartQuantity}/>
+          <NavbarBs cartQuantity={cartQuantity} showPanelCart={ () => this.handleShowPanelCart()}/>
+          { showPanel && items.length && <div className="panel-cart-custom">
+            <Row>
+              <Col>
+                <ul className="ul-panel">
+                  {addedItems}
+                </ul>
+              </Col>
+            </Row>
+          </div>
+
+          }
           { loading ?
             <Container>
               <Row>

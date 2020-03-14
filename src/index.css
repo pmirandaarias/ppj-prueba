@@ -91,9 +91,13 @@
   padding: 32px;
 }
 
+.cart-item-panel {
+  padding: 16px;
+}
 
-.title-cart-item {
 
+.title-cart-item-panel {
+  font-size: 12px;
 }
 
 .cart-number {
@@ -148,4 +152,33 @@
 
 .item-name {
   color: #0f94a3;
+}
+
+/* Para el Transition*/
+.panel-cart-custom {
+  position: fixed;
+  right:0;
+  z-index: 9999;
+  background: #FEFEFE;
+  border: 1px #0f94a3 solid;
+  width: 250px;
+}
+
+.img-panel-div {
+  width: 50px;
+}
+
+.img-item-panel {
+ width: 50px;
+}
+
+.ul-panel {
+  margin: 0;
+  padding: 8px;
+}
+
+.row-panel-cart {
+  border-bottom: #e2f2f7 1px solid;
+  margin: 0px;
+  padding:8px;
 }
