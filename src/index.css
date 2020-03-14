@@ -16,23 +16,25 @@
 
 
 .card-container {
-  height: 350px;
+  height: 335px;
   width: 175px;
+  margin: 0 6px 24px 6px;
 }
 
 .card-image {
-  height: 250px;
+  height: 215px;
   width: 175px;
   padding: 16px;
 }
 
 .card-info {
-  height: 100px;
+  height: 95px;
   width: 175px;
-  padding: 4px 4px 2px 16px;
   color: black;
   font-weight: 400;
   font-size: 12px;
+  background: #edf2f5;
+  padding-top: 8px;
 }
 
 .card-info-item {
@@ -81,8 +83,8 @@
 
 .btn-custom {
   position: absolute;
-  right: 8px;
-  bottom: 12px;
+  margin-left: 16px;
+  bottom: 2px;
 }
 
 .cart-item {
@@ -96,7 +98,7 @@
 
 .cart-number {
   color: white;
-  background: #1ec607;
+  background: #c60733;
   padding: 1px 5px;
   border-radius: 15px;
   font-size: 10px;
@@ -125,4 +127,25 @@
 .cart-icon {
   color: yellow;
   margin-top: 4px;
+}
+
+
+.card-add{
+  height: 25px;
+  background: #1a94af;
+  color: white;
+  font-weight: bold;
+}
+
+.bi-cart{
+  margin-left: 5px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1a94af;
+}
+
+.item-name {
+  color: #0f94a3;
 }

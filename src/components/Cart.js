@@ -28,7 +28,8 @@ class Cart extends Component {
       (
         items.map(item => {
           const idTail = item.tail;
-          console.log('item', item)
+
+          // Simulación del precio, a partir de data que viene en cada item
           const price =
             item.release.au ? parseInt(item.release.au.split('-')[2])*1000 + 10990 :
               item.release.eu ? parseInt(item.release.eu.split('-')[2])*1000 + 10990 :

@@ -1,5 +1,7 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
+import { FaCartPlus } from 'react-icons/fa';
+import { Button} from "react-bootstrap";
 
 const Items = (props) => {
     const { items, addToCart } = props;
@@ -9,6 +11,7 @@ const Items = (props) => {
     if (items && items.length >0 ){
       return items.map(item => {
 
+        // Simulación del precio, a partir de data que viene en cada item
         const price =
             item.release.au ? parseInt(item.release.au.split('-')[2])*1000 + 10990 :
               item.release.eu ? parseInt(item.release.eu.split('-')[2])*1000 + 10990 :
@@ -21,13 +24,16 @@ const Items = (props) => {
           </div>
           <div className="card-info">
             <ul className="list">
-              <li>Nombre: {item.name}</li>
+              <li>Nombre: <span className="item-name">{item.name}</span></li>
               <li>Tipo: {item.type}</li>
-              <li><b>Valor: <NumberFormat value={price} displayType={'text'} thousandSeparator="." decimalSeparator="," prefix={'$'} /></b></li>
+              <li><b>Precio: <NumberFormat value={price} displayType={'text'} thousandSeparator="." decimalSeparator="," prefix={'$'} /></b></li>
             </ul>
           </div>
           <div className="card-add">
-            <span to="/" className="btn-floating waves-effect waves-light red btn-custom" onClick={() => handleClick(item.tail, price)}><i className="material-icons">add</i> Agregar al carro</span>
+            <Button variant="primary" size="sm" block onClick={() => handleClick(item.tail, price)}>
+              <FaCartPlus />
+              <span className="bi-cart">Agregar al carro</span>
+            </Button>
           </div>
         </div>
     });
