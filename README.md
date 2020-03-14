@@ -35,6 +35,7 @@ Se abrirá una ventana en su navegador por defecto en `localhost:3000` donde vis
 - Traté de dejar algunos componentes stateless y otros statefull donde se requería.
 - "Checkout" no hace nada, por un momento al leer las instrucciones pensé que la API recibiría peticiones POST para enviar datos pero leí que como era educacional, sólo aceptaba GET, así que no tiene mayor funcionalidad el Checkout.
 - No hice uso de styles inline, para dejar todo en clases.
+- Sobre GIT, usé 3 tipos de rama: las 2 básicas `master` y `develop`, más otras de desarrollos puntuales (`features/`), siguiendo lo más cercano al patrón `git-flow`.
 
 ***
 
